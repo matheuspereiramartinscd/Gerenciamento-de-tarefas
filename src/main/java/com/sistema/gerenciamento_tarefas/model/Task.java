@@ -80,6 +80,18 @@ public class Task {
         return dataConclusao;
     }
 
+    @Column(name = "hora_criacao")
+    private LocalDateTime horaCriacao;
+
+    // Getter e Setter
+    public LocalDateTime getHoraCriacao() {
+        return horaCriacao;
+    }
+
+    public void setHoraCriacao(LocalDateTime horaCriacao) {
+        this.horaCriacao = horaCriacao;
+    }
+
     public void setDataConclusao(LocalDateTime dataConclusao) {
         this.dataConclusao = dataConclusao;
     }
