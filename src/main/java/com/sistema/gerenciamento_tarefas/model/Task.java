@@ -23,15 +23,17 @@ public class Task {
 
     private String usuarioAtribuido;
 
+    @PrePersist
+    public void prePersist() {
+        if (this.dataCriacao == null) {
+            this.dataCriacao = LocalDateTime.now();
+        }
+    }
+
     // Getters e Setters
 
     public enum StatusTask {
         PENDENTE, EM_PROGESSO, CONCLUIDA
-    }
-
-    public Task() {
-        // Inicializa a data de criação ao criar uma tarefa
-        this.dataCriacao = LocalDateTime.now();
     }
 
     public Long getId() {
