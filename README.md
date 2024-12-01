@@ -146,4 +146,10 @@ Certifique-se de que o Docker esteja instalado e configurado. Utilize o arquivo 
 Execute o sistema:
     
     docker-compose up --build
-  
+    
+![lista](https://github.com/user-attachments/assets/c90c9cca-d104-4394-816e-ce0eef169d91)
+![lissta](https://github.com/user-attachments/assets/08ad6437-4bb0-4f05-9b14-f9d79803db56)
+![detalhes](https://github.com/user-attachments/assets/4e63019b-284e-42ae-b9ad-560a62f7b3fc)
+![novatarefa](https://github.com/user-attachments/assets/83c58f50-5e2e-45ab-998a-9a63afebfd64)
+
+
