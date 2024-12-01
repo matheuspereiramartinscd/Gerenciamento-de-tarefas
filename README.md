@@ -66,11 +66,13 @@ A interface exibe uma lista com as seguintes informações:
 #### Configure o banco de dados PostgreSQL:
 
 Crie um banco de dados chamado `gerenciamento_tarefas` com o usuário `admin` e senha `admin`.
+
     ```sql
     CREATE DATABASE gerenciamento_tarefas;
     ```
 
 Configure o arquivo `application.properties`:
+
     ```properties
     spring.datasource.url=jdbc:postgresql://localhost:5432/gerenciamento_tarefas
     spring.datasource.username=admin
@@ -79,6 +81,7 @@ Configure o arquivo `application.properties`:
     ```
 
 Compile e execute:
+
     ```bash
     mvn clean install
     mvn spring-boot:run
