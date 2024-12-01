@@ -58,93 +58,93 @@ A interface exibe uma lista com as seguintes informações:
 ### **1. Backend (Spring Boot)**
 
 #### Clone o repositório:
-```bash
-git clone https://github.com/seuusuario/sgte-backend.git
-cd sgte-backend
-```
+    ```bash
+    git clone https://github.com/seuusuario/sgte-backend.git
+    cd sgte-backend
+    ```
 
 #### Configure o banco de dados PostgreSQL:
 
-Crie um banco de dados chamado `gerenciamento_tarefas` com o usuário `admin` e senha `admin`.
-```sql
-CREATE DATABASE gerenciamento_tarefas;
-```
+    Crie um banco de dados chamado `gerenciamento_tarefas` com o usuário `admin` e senha `admin`.
+    ```sql
+    CREATE DATABASE gerenciamento_tarefas;
+    ```
 
-Configure o arquivo `application.properties`:
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/gerenciamento_tarefas
-spring.datasource.username=admin
-spring.datasource.password=admin
-spring.jpa.hibernate.ddl-auto=update
-```
+    Configure o arquivo `application.properties`:
+    ```properties
+    spring.datasource.url=jdbc:postgresql://localhost:5432/gerenciamento_tarefas
+    spring.datasource.username=admin
+    spring.datasource.password=admin
+    spring.jpa.hibernate.ddl-auto=update
+    ```
 
-Compile e execute:
-```bash
-mvn clean install
-mvn spring-boot:run
-```
+    Compile e execute:
+    ```bash
+    mvn clean install
+    mvn spring-boot:run
+    ```
 
 ### 2. Frontend (React.js)
-Clone o repositório:
-```bash
-git clone https://github.com/seuusuario/sgte-frontend.git
-cd sgte-frontend
-```
+    Clone o repositório:
+    ```bash
+    git clone https://github.com/seuusuario/sgte-frontend.git
+    cd sgte-frontend
+    ```
 
-Instale as dependências:
-```bash
-npm install
-```
+    Instale as dependências:
+    ```bash
+    npm install
+    ```
 
-Execute o servidor de desenvolvimento:
-```bash
-npm start
-```
+    Execute o servidor de desenvolvimento:
+    ```bash
+    npm start
+    ```
 
 ### 3. Docker
-Certifique-se de que o Docker esteja instalado e configurado. Utilize o arquivo `docker-compose.yml` abaixo para rodar todo o sistema:
-```yaml
-version: '3.8'
-
-services:
-  backend:
-    build:
-      context: ./ # Caminho para o backend
-    ports:
-      - "8080:8080"
+    Certifique-se de que o Docker esteja instalado e configurado. Utilize o arquivo `docker-compose.yml` abaixo para rodar todo o sistema:
+    ```yaml
+    version: '3.8'
+    
+    services:
+      backend:
+        build:
+          context: ./ # Caminho para o backend
+        ports:
+          - "8080:8080"
+        networks:
+          - app-network
+        depends_on:
+          - db
+    
+      frontend:
+        build:
+          context: ./frontend # Caminho para o frontend
+        ports:
+          - "3000:3000"
+        networks:
+          - app-network
+        depends_on:
+          - backend
+    
+      db:
+        image: postgres:15
+        restart: always
+        environment:
+          POSTGRES_USER: admin
+          POSTGRES_PASSWORD: admin
+          POSTGRES_DB: gerenciamento_tarefas
+        ports:
+          - "5432:5432"
+        networks:
+          - app-network
+    
     networks:
-      - app-network
-    depends_on:
-      - db
-
-  frontend:
-    build:
-      context: ./frontend # Caminho para o frontend
-    ports:
-      - "3000:3000"
-    networks:
-      - app-network
-    depends_on:
-      - backend
-
-  db:
-    image: postgres:15
-    restart: always
-    environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: gerenciamento_tarefas
-    ports:
-      - "5432:5432"
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
-```
-
-Execute o sistema:
-```bash
-docker-compose up --build
-```
+      app-network:
+        driver: bridge
+    ```
+    
+    Execute o sistema:
+    ```bash
+    docker-compose up --build
+    ```
