@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./ # Caminho para o diretório do backend
+    ports:
+      - "8080:8080" # Expondo a porta 8080
+    networks:
+      - app-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/gerenciamento_tarefas
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.PostgreSQLDialect
+
+  frontend:
+    build:
+      context: ./frontend # Caminho para o diretório do frontend
+    ports:
+      - "80:80" # Expondo a porta 80
+    networks:
+      - app-network
+    depends_on:
+      - backend # Garantir que o backend esteja rodando antes do frontend
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: gerenciamento_tarefas
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5433:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/tasks")
-@CrossOrigin(origins = "http://localhost:3000") // Permite requisições do frontend
+@CrossOrigin(origins = "http://localhost") // Permite requisições do frontend
 public class TaskController {
 
     @Autowired
