@@ -67,7 +67,6 @@ A interface exibe uma lista com as seguintes informações:
 
 Crie um banco de dados chamado `gerenciamento_tarefas` com o usuário `admin` e senha `admin`.
 
-    sql
     CREATE DATABASE gerenciamento_tarefas;
 
 Configure o arquivo `application.properties`:
