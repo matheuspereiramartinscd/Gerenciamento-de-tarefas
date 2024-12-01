@@ -58,55 +58,53 @@ A interface exibe uma lista com as seguintes informações:
 ### **1. Backend (Spring Boot)**
 
 #### Clone o repositório:
-    ```bash
+
     git clone https://github.com/seuusuario/sgte-backend.git
     cd sgte-backend
-    ```
+
 
 #### Configure o banco de dados PostgreSQL:
 
 Crie um banco de dados chamado `gerenciamento_tarefas` com o usuário `admin` e senha `admin`.
 
-    ```sql
+    sql
     CREATE DATABASE gerenciamento_tarefas;
-    ```
 
 Configure o arquivo `application.properties`:
 
-    ```properties
+    properties
     spring.datasource.url=jdbc:postgresql://localhost:5432/gerenciamento_tarefas
     spring.datasource.username=admin
     spring.datasource.password=admin
     spring.jpa.hibernate.ddl-auto=update
-    ```
+    
 
 Compile e execute:
 
-    ```bash
     mvn clean install
     mvn spring-boot:run
-    ```
+ 
 
 ### 2. Frontend (React.js)
 Clone o repositório:
-    ```bash
+
     git clone https://github.com/seuusuario/sgte-frontend.git
     cd sgte-frontend
-    ```
+  
 
 Instale as dependências:
-    ```bash
+ 
     npm install
-    ```
+ 
 
 Execute o servidor de desenvolvimento:
-    ```bash
+  
     npm start
-    ```
+
 
 ### 3. Docker
 Certifique-se de que o Docker esteja instalado e configurado. Utilize o arquivo `docker-compose.yml` abaixo para rodar todo o sistema:
-    ```yaml
+    yaml
     version: '3.8'
     
     services:
@@ -145,9 +143,9 @@ Certifique-se de que o Docker esteja instalado e configurado. Utilize o arquivo 
     networks:
       app-network:
         driver: bridge
-    ```
+ 
     
     Execute o sistema:
-    ```bash
+    
     docker-compose up --build
-    ```
+  
