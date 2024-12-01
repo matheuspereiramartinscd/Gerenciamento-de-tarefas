@@ -143,8 +143,7 @@ Certifique-se de que o Docker esteja instalado e configurado. Utilize o arquivo 
       app-network:
         driver: bridge
  
-    
-    Execute o sistema:
+Execute o sistema:
     
     docker-compose up --build
   
