@@ -52,17 +52,17 @@ A interface exibe uma lista com as seguintes informações:
 
 ---
 
-### Como Rodar o Projeto
+## Como Rodar o Projeto
 
-## **1. Backend (Spring Boot)**
+### **1. Backend (Spring Boot)**
 
-# Clone o repositório:
+#### Clone o repositório:
 ```bash
 git clone https://github.com/seuusuario/sgte-backend.git
 cd sgte-backend
 ```
 
-# Configure o banco de dados PostgreSQL:
+#### Configure o banco de dados PostgreSQL:
 
 Crie um banco de dados chamado `gerenciamento_tarefas` com o usuário `admin` e senha `admin`.
 ```sql
@@ -83,7 +83,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-## 2. Frontend (React.js)
+### 2. Frontend (React.js)
 Clone o repositório:
 ```bash
 git clone https://github.com/seuusuario/sgte-frontend.git
@@ -100,7 +100,7 @@ Execute o servidor de desenvolvimento:
 npm start
 ```
 
-## 3. Docker
+### 3. Docker
 Certifique-se de que o Docker esteja instalado e configurado. Utilize o arquivo `docker-compose.yml` abaixo para rodar todo o sistema:
 ```yaml
 version: '3.8'
