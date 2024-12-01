@@ -1,6 +1,7 @@
+
 # Sistema de Gerenciamento de Tarefas em Equipe (SGTE)
 
-<p>Este projeto visa auxiliar equipes na organização e acompanhamento de tarefas. Com funcionalidades intuitivas, o sistema melhora a eficiência no gerenciamento de projetos e proporciona maior colaboração entre os membros da equipe.</p>
+Este projeto visa auxiliar equipes na organização e acompanhamento de tarefas. Com funcionalidades intuitivas, o sistema melhora a eficiência no gerenciamento de projetos e proporciona maior colaboração entre os membros da equipe.
 
 ---
 
